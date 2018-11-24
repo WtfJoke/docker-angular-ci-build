@@ -1,9 +1,6 @@
 # Docker container for building frontend
 
 Docker container having all you need to build your angular cli app on the CI server.
-
-## Building
-
 ```
 docker pull dxjoke/docker-angular-ci-build
 ```
