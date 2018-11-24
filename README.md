@@ -1,21 +1,33 @@
 # Docker container for building frontend
 
-Docker container having all you need to build your app on the CI server.
+Docker container having all you need to build your angular cli app on the CI server.
 
 ## Building
 
 ```
-docker build juristr/angular-ci
+docker pull dxjoke/docker-angular-ci-build
 ```
 
-## Tagging
-
+## Gitlab CI 
 ```
-docker tag <sha> juristr/angular-ci:<tag-name>
-```
+image: dxjoke/docker-angular-ci-build
+stages:
+  - build
+  - test
+  
+before_script:
+  - npm install
+  
+app-build:
+  stage: build
+  artifacts:
+    paths:
+      - dist/
+  script:
+    - npm run build
 
-## Publish
-
-```
-docker push juristr/angular-ci
+unit-tests:
+  stage: test
+  script:
+    - npm test
 ```
