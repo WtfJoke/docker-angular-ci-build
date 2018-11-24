@@ -8,7 +8,8 @@ RUN curl -sL https://deb.nodesource.com/setup_9.x | bash - && \
     apt-get update && apt-get install -y nodejs && \
     npm install npm@latest -g \
     npm install -g yarn \
-    npm install -g @angular/cli@$NG_CLI_VERSION
+    npm install -g @angular/cli@$NG_CLI_VERSION \
+    npm cache clean --force
 RUN apt-get install git -y
 
 
