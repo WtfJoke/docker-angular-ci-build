@@ -4,7 +4,7 @@ ARG NG_CLI_VERSION=7.0.6
 
 RUN apt-get update
 RUN apt-get install -yy wget curl gnupg
-RUN curl -sL https://deb.nodesource.com/setup_9.x | bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_10.x  | bash - && \
     apt-get update && apt-get install -y nodejs && \
     npm install npm@latest -g \
     npm install -g yarn \
